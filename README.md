@@ -28,6 +28,7 @@
   <a href="#-features">Features</a> •
   <a href="#-working-with-devshare-desktop-client">How It Works</a> •
   <a href="#-installation">Installation</a> •
+  <a href="#-telegram-bot-setup">Telegram Bot</a> •
   <a href="#-deployment">Deployment</a> •
   <a href="#-api-endpoints">API</a> •
   <a href="#-usage-examples">Usage</a>
@@ -85,6 +86,46 @@ The server has the following components:
 - Python 3.9 or higher
 - pip (Python package manager)
 - A Telegram Bot token (from [@BotFather](https://t.me/botfather))
+
+## 🤖 Telegram Bot Setup
+
+Before deploying the server, you need to create your own Telegram bot and obtain its token:
+
+### Creating a Bot with BotFather
+
+1. Open Telegram and search for **@BotFather** in the search bar
+2. Start a chat with BotFather by clicking "Start" or sending `/start`
+3. Send the command `/newbot` to create a new bot
+4. BotFather will ask you to name your bot:
+   - First, enter a display name (e.g., "DevShare Bot")
+   - Then, provide a username ending with "bot" (e.g., "my_devshare_bot" or "your_name_devshare_bot")
+5. If the username is available, BotFather will respond with a success message containing your bot token
+   - It will look something like: `1234567890:ABCdefGhIJKlmnOPQRstUVwxYZ`
+   - This token is used to authenticate API requests to the Telegram Bot API
+   - **Keep this token secure!** It gives full control over your bot
+
+### Configuring Your Bot (Optional)
+
+You can enhance your bot with additional settings via BotFather:
+
+- `/setdescription` - Add a description about what your bot does
+- `/setabouttext` - Set the text shown in the bot's profile page
+- `/setuserpic` - Upload a profile picture for your bot (you can use the DevShare logo)
+- `/setcommands` - Set up menu commands to appear when users type "/"
+
+For DevShare, useful commands to set are:
+```
+start - Initialize the bot and get welcome message
+help - Show usage instructions and tips
+status - Check if your desktop client is connected
+```
+
+### Using Your Bot Token
+
+You'll need the bot token for:
+- The `.env` file in local development
+- The environment variables when deploying to Railway
+- Setting up webhooks for your bot
 
 ### Setup
 
